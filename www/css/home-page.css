@@ -1,0 +1,18 @@
+:root {
+  /* === Main Colors === */
+  --primary-color: rgb(139, 92, 246);     /* Orchid purple */
+  --secondary-color: rgb(16, 185, 129);   /* Leaf green */
+  --background-color: rgb(255, 255, 255); /* White background */
+
+  /* === Support Colors === */
+  --accent-color: rgb(236, 72, 153);   /* Pink accent */
+  --text-color: rgb(34, 34, 34);       /* Main text */
+  --muted-color: rgb(120, 113, 108);   /* Secondary text */
+
+  /* === Spacing & Style === */
+  --space: 0.5rem;
+  --half-space: calc(var(--space) / 2);
+  --double-space: calc(var(--space) * 2);
+  --border-radius: 8px;
+  --icon-size: 64px;
+}
