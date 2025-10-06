@@ -17,11 +17,50 @@
   --icon-size: 64px;
 }
 
+/* === Body === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;     
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* === Header === */
+header > ul{
+  list-style-type: none;
+  display: flex;
+}
+
+header > ul > li{
+  margin: 1rem;
+}
+
+/* === Main === */
+main > ul{
+  display: flex;
+  list-style-type: none;
+}
+
 section{
-  width: 100%;
   display: flex;
 }
 
 section > img{
-  padding: 1%;
+  margin: 1%;
+}
+
+/* === Footer == */
+footer{
+  display: flex;
+}
+
+footer > section{
+  margin: 5rem;
 }
