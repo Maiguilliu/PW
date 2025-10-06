@@ -16,3 +16,12 @@
   --border-radius: 8px;
   --icon-size: 64px;
 }
+
+section{
+  width: 100%;
+  display: flex;
+}
+
+section > img{
+  padding: 1%;
+}
