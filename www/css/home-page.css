@@ -1,13 +1,16 @@
 :root {
   /* === Main Colors === */
-  --primary-color: rgb(139, 92, 246);     /* Orchid purple */
-  --secondary-color: rgb(16, 185, 129);   /* Leaf green */
+  --primary-color: rgb(139, 92, 246);     /* Orchid purple — main accent */
+  --secondary-color: rgb(16, 185, 129);   /* Leaf green — secondary highlight */
   --background-color: rgb(255, 255, 255); /* White background */
 
   /* === Support Colors === */
-  --accent-color: rgb(236, 72, 153);   /* Pink accent */
-  --text-color: rgb(34, 34, 34);       /* Main text */
-  --muted-color: rgb(120, 113, 108);   /* Secondary text */
+  --accent-color: rgb(236, 72, 153);      /* Pink accent for highlights/buttons */
+  --text-color: rgb(34, 34, 34);          /* Main text color */
+  --muted-color: rgb(120, 113, 108);      /* Secondary/subtle text */
+
+  /* === Optional Neutral (for readability on color backgrounds) === */
+  --light-color: rgb(245, 245, 245);      /* Light neutral (optional) */
 
   /* === Spacing & Style === */
   --space: 0.5rem;
@@ -17,22 +20,35 @@
   --icon-size: 64px;
 }
 
-/* === Body === */
+/* === HTML ===*/
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  flex-wrap: wrap;     
+  padding: 0;    
 }
 
+/* === Body === */
 body {
   font-family: system-ui, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+
 /* === Header === */
+header{
+  flex-wrap: wrap; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 10%;
+  background-color: var(--primary-color);   
+  color: var(--light-color);           
+}
+
 header > ul{
   list-style-type: none;
   display: flex;
@@ -40,27 +56,69 @@ header > ul{
 
 header > ul > li{
   margin: 1rem;
+  color: var(--light-color);
+}
+
+header > ul > li a {
+  text-decoration: none;
+  color: var(--light-color);
 }
 
 /* === Main === */
-main > ul{
+main{
+  flex: 1;
+  flex-wrap: wrap; 
   display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color); 
+  height: 60%;
+}
+
+main > ul{
   list-style-type: none;
 }
 
-section{
+main > section{
   display: flex;
+  background-color: var(--light-color);
 }
 
-section > img{
-  margin: 1%;
+main > section > img{
+  margin: 0.5rem;
+}
+
+.flowers > ul{
+  flex-wrap: wrap; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
 }
 
 /* === Footer == */
-footer{
+footer {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; 
+  background-color: var(--secondary-color);
+  color: var(--light-color); 
 }
 
-footer > section{
-  margin: 5rem;
+/* remove list default padding */
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer > section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem;
+  height: 30%;
 }
