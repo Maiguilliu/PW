@@ -82,7 +82,7 @@ main > ul{
 
 main > section{
   display: flex;
-  background-color: var(--light-color);
+  background-color: var(--background-color);
 }
 
 main > section > img{
@@ -96,6 +96,10 @@ main > section > img{
   align-items: center;
   flex-direction: row;
   list-style-type: none;
+}
+
+.flower-info{
+  background-color: var(--light-color);
 }
 
 /* === Footer == */
