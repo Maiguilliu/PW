@@ -85,7 +85,7 @@ main > section{
   background-color: var(--background-color);
 }
 
-main > section > img{
+main > section img{
   margin: 0.5rem;
 }
 
@@ -96,6 +96,11 @@ main > section > img{
   align-items: center;
   flex-direction: row;
   list-style-type: none;
+}
+
+.flowers img{
+  width: 250px;
+  height: 250px;
 }
 
 .flower-info{
