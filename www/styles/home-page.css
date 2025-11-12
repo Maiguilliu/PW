@@ -92,6 +92,14 @@ main > section li{
   margin-bottom: 0.2rem;
 }
 
+.flowers{
+  flex-wrap: wrap; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: row;
+}
+
 .flowers > ul{
   flex-wrap: wrap; 
   display: flex;
