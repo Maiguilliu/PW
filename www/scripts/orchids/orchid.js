@@ -1,4 +1,4 @@
-class orchid {
+class Orchid {
     #id;
     #description;
     #genus;
@@ -58,38 +58,38 @@ class orchid {
     }
 
     set id(newId) {
-        this.#id = newId;
+        this.#id = Id;
     }
 
-    set description(newDescription) {
-        this.#description = newDescription;
+    set description(Description) {
+        this.#description = Description;
     }
 
-    set genus(newGenus) {
-        this.#genus = newGenus;
+    set genus(Genus) {
+        this.#genus = Genus;
     }
 
-    set type(newType) {
-        this.#type = newType;
+    set type(Type) {
+        this.#type = Type;
     }
 
-    set luminosity(newLuminosity) {
-        this.#luminosity = newLuminosity;
+    set luminosity(Luminosity) {
+        this.#luminosity = Luminosity;
     }
 
-    set temperature(newTemperature) {
-        this.#temperature = newTemperature;
+    set temperature(Temperature) {
+        this.#temperature = Temperature;
     }
 
-    set humidity(newHumidity) {
-        this.#humidity = newHumidity;
+    set humidity(Humidity) {
+        this.#humidity = Humidity;
     }
 
-    set size(newSize) {
-        this.#size = newSize;
+    set size(Size) {
+        this.#size = Size;
     }
 
-    set src(newSrc) {
-        this.#src = newSrc;
+    set src(Src) {
+        this.#src = Src;
     }
 }
