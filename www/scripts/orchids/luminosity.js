@@ -2,22 +2,37 @@ class LuminosityList {
     #list;
     constructor() {
         this.#list = [];
+        LuminosityList.#populate();
     }
 
-    add(newLuminosity){
+    add(newLuminosity) {
         this.#list.push(new Luminosity(newLuminosity));
     }
 
-    remove(luminosity){
-        for(let i = 0; i<this.#list.length; i++){
-            if(this.#list[i].luminosity === luminosity){
+    remove(luminosity) {
+        for (let i = 0; i < this.#list.length; i++) {
+            if (this.#list[i].luminosity === luminosity) {
                 return this.#list.splice(i, 1);
             }
         }
     }
 
-    get LuminosityList(){
+    get getList() {
         return this.#list.slice();
+    }
+
+    getLuminosity(id) {
+        for (let i = 0; i < this.#list; i++) {
+            if (this.#list[i].id === id) {
+                return this.#list.id;
+            }
+        }
+    }
+
+    static #populate(){
+        for(let i = 0; i<4; i++){
+            add(data.luminosity[i].description);
+        }
     }
 
 }
@@ -39,7 +54,7 @@ class Luminosity {
         this.#description = newDescription;
     }
 
-    get id(){
+    get id() {
         return this.#id;
     }
 }

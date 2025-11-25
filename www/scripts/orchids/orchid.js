@@ -1,4 +1,43 @@
+class OrchidList{
+    #list;
+    constructor(){
+        this.#list = [];
+        OrchidList.#populate();
+    }
+    
+    add(newOrchid){
+        this.#list.push(new Orchid(newOrchid.description, 
+            newOrchid.genus, 
+            newOrchid.type, 
+            newOrchid.luminosity, 
+            newOrchid.temperature, 
+            newOrchid.humidity,
+            newOrchid.size,
+            newOrchid.src));
+    }
+
+    remove(orchid){
+        for(let i = 0; i<this.#list.length; i++){
+            if(this.#list[i].orchid === orchid){
+                return this.#list.splice(i, 1);
+            }
+        }
+    }
+
+    get getList(){
+        return this.#list.slice();
+    }
+
+    static #populate(){
+        for(let i = 0; i<25; i++){
+            add(data.orchid[i].description);
+        }
+    }
+
+}
+
 class Orchid {
+    static _currentId = 1;
     #id;
     #description;
     #genus;
@@ -9,8 +48,8 @@ class Orchid {
     #size;
     #src;
 
-    constructor(id, description, genus, type, luminosity, temperature, humidity, size, src) {
-        this.#id = id;
+    constructor(description, genus, type, luminosity, temperature, humidity, size, src) {
+        this.#id = id++;
         this.#description = description;
         this.#genus = genus;
         this.#type = type;
@@ -55,10 +94,6 @@ class Orchid {
 
     get src() {
         return this.#src;
-    }
-
-    set id(newId) {
-        this.#id = Id;
     }
 
     set description(Description) {

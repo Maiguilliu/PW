@@ -2,22 +2,37 @@ class TemperatureList {
     #list;
     constructor() {
         this.#list = [];
+        TemperatureList.#populate();
     }
 
-    add(newTemperature){
+    add(newTemperature) {
         this.#list.push(new Temperature(newTemperature));
     }
 
-    remove(temperature){
-        for(let i = 0; i<this.#list.length; i++){
-            if(this.#list[i].temperature === temperature){
+    remove(temperature) {
+        for (let i = 0; i < this.#list.length; i++) {
+            if (this.#list[i].temperature === temperature) {
                 return this.#list.splice(i, 1);
             }
         }
     }
 
-    get temperatureList(){
+    get getList() {
         return this.#list.slice();
+    }
+
+    getTemperature(id) {
+        for (let i = 0; i < this.#list; i++) {
+            if (this.#list[i].id === id) {
+                return this.#list.id;
+            }
+        }
+    }
+
+    static #populate(){
+        for(let i = 0; i<4; i++){
+            add(data.temperature[i].description);
+        }
     }
 
 }
@@ -39,7 +54,7 @@ class Temperature {
         this.#description = newDescription;
     }
 
-    get id(){
+    get id() {
         return this.#id;
     }
 }

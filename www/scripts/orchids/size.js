@@ -2,6 +2,7 @@ class SizeList {
     #list;
     constructor() {
         this.#list = [];
+        SizeList.#populate();
     }
 
     add(newSize){
@@ -16,8 +17,22 @@ class SizeList {
         }
     }
 
-    get sizeList(){
+    get getList(){
         return this.#list.slice();
+    }
+
+    getSize(id){
+        for(let i = 0; i<this.#list; i++){
+            if(this.#list[i].id === id){
+                return this.#list.id;
+            }
+        }
+    }
+
+    static #populate(){
+        for(let i = 0; i<4; i++){
+            add(data.type[i].description);
+        }
     }
 
 }
