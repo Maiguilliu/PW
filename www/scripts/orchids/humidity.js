@@ -1,8 +1,12 @@
-class HumidityList {
+"use strict"
+
+import { data } from './data.js';
+
+export class HumidityList {
     #list;
     constructor() {
         this.#list = [];
-        HumidityList.#populate;
+        this.#populate();
     }
 
     add(newHumidity) {
@@ -29,16 +33,16 @@ class HumidityList {
         }
     }
 
-    static #populate(){
+    #populate(){
         for(let i = 0; i<4; i++){
-            add(data.humidity[i].description);
+            this.add(data.humidity[i].description);
         }
     }
 
 
 }
 
-class Humity {
+export class Humity {
     static _currentId = 1;
     #id;
     #description;

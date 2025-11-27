@@ -1,8 +1,12 @@
-class TemperatureList {
+"use strict"
+
+import { data } from './data.js';
+
+export class TemperatureList {
     #list;
     constructor() {
         this.#list = [];
-        TemperatureList.#populate();
+        this.#populate();
     }
 
     add(newTemperature) {
@@ -29,15 +33,15 @@ class TemperatureList {
         }
     }
 
-    static #populate(){
+    #populate(){
         for(let i = 0; i<4; i++){
-            add(data.temperature[i].description);
+            this.add(data.temperature[i].description);
         }
     }
 
 }
 
-class Temperature {
+export class Temperature {
     static _currentId = 1;
     #id;
     #description;

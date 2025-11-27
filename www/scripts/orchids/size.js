@@ -1,8 +1,12 @@
-class SizeList {
+"use strict"
+
+import { data } from './data.js';
+
+export class SizeList {
     #list;
     constructor() {
         this.#list = [];
-        SizeList.#populate();
+        this.#populate();
     }
 
     add(newSize){
@@ -22,16 +26,16 @@ class SizeList {
     }
 
     getSize(id){
-        for(let i = 0; i<this.#list; i++){
+        for(let i = 0; i<this.#list.length; i++){
             if(this.#list[i].id === id){
-                return this.#list.id;
+                return this.#list[i].id;
             }
         }
     }
 
-    static #populate(){
+    #populate(){
         for(let i = 0; i<4; i++){
-            add(data.type[i].description);
+            this.add(data.size[i].description);
         }
     }
 

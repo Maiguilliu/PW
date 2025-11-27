@@ -1,42 +1,77 @@
-class OrchidList{
+"use strict"
+
+import { data } from './data.js';
+
+import { GenusList } from './genus.js';
+import { TypeList } from './type.js';
+import { LuminosityList } from './luminosity.js';
+import { TemperatureList } from './temperature.js';
+import { HumidityList } from './humidity.js';
+import { SizeList } from './size.js';
+
+export class OrchidList {
     #list;
-    constructor(){
+    constructor() {
         this.#list = [];
-        OrchidList.#populate();
-    }
-    
-    add(newOrchid){
-        this.#list.push(new Orchid(newOrchid.description, 
-            newOrchid.genus, 
-            newOrchid.type, 
-            newOrchid.luminosity, 
-            newOrchid.temperature, 
-            newOrchid.humidity,
-            newOrchid.size,
-            newOrchid.src));
     }
 
-    remove(orchid){
-        for(let i = 0; i<this.#list.length; i++){
-            if(this.#list[i].orchid === orchid){
+    add(
+        newOrchid,
+        genusList,
+        typeList,
+        luminosityList,
+        temperatureList,
+        humidityList,
+        sizeList
+    ) {
+        this.#list.push(new Orchid(
+            newOrchid.description,
+            genusList.getGenus(newOrchid.genus),
+            typeList.getType(newOrchid.type),
+            luminosityList.getLuminosity(newOrchid.luminosity),
+            temperatureList.getTemperature(newOrchid.temperature),
+            humidityList.getHumidity(newOrchid.humidity),
+            sizeList.getSize(newOrchid.size),
+            newOrchid.src
+        ));
+    }
+
+    remove(orchid) {
+        for (let i = 0; i < this.#list.length; i++) {
+            if (this.#list[i].orchid === orchid) {
                 return this.#list.splice(i, 1);
             }
         }
     }
 
-    get getList(){
+    get getList() {
         return this.#list.slice();
     }
 
-    static #populate(){
-        for(let i = 0; i<25; i++){
-            add(data.orchid[i].description);
+    populate(
+        genusList,
+        typeList,
+        luminosityList,
+        temperatureList,
+        humidityList,
+        sizeList
+    ) {
+        for (let i = 0; i < 25; i++) {
+            this.add(
+                data.orchid[i],
+                genusList,
+                typeList,
+                luminosityList,
+                temperatureList,
+                humidityList,
+                sizeList,
+            );
         }
     }
 
 }
 
-class Orchid {
+export class Orchid {
     static _currentId = 1;
     #id;
     #description;
@@ -48,8 +83,17 @@ class Orchid {
     #size;
     #src;
 
-    constructor(description, genus, type, luminosity, temperature, humidity, size, src) {
-        this.#id = id++;
+    constructor(
+        description,
+        genus,
+        type,
+        luminosity,
+        temperature,
+        humidity,
+        size,
+        src
+    ) {
+        this.#id = Orchid._currentId++;
         this.#description = description;
         this.#genus = genus;
         this.#type = type;

@@ -1,8 +1,12 @@
-class LuminosityList {
+"use strict"
+
+import { data } from './data.js';
+
+export class LuminosityList {
     #list;
     constructor() {
         this.#list = [];
-        LuminosityList.#populate();
+        this.#populate();
     }
 
     add(newLuminosity) {
@@ -29,15 +33,15 @@ class LuminosityList {
         }
     }
 
-    static #populate(){
+    #populate(){
         for(let i = 0; i<4; i++){
-            add(data.luminosity[i].description);
+            this.add(data.luminosity[i].description);
         }
     }
 
 }
 
-class Luminosity {
+export class Luminosity {
     static _currentId = 1;
     #id;
     #description;

@@ -1,5 +1,5 @@
 "use strict";
-let data = {
+export let data = {
     genus: [
         { id: 1, description: "Bulbophyllum" },
         { id: 2, description: "Cattleya" },

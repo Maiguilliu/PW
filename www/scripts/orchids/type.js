@@ -1,10 +1,12 @@
 "use strict";
 
-class TypeList {
+import { data } from './data.js';
+
+export class TypeList {
     #list;
     constructor() {
         this.#list = [];
-        TypeList.#populate();
+        this.#populate();
     }
 
     add(newType) {
@@ -24,21 +26,21 @@ class TypeList {
     }
 
     getType(id) {
-        for (let i = 0; i < this.#list; i++) {
+        for (let i = 0; i < this.#list.length; i++) {
             if (this.#list[i].id === id) {
-                return this.#list.id;
+                return this.#list[i];
             }
         }
     }
 
-    static #populate(){
+    #populate(){
         for(let i = 0; i<2; i++){
-            add(data.type[i].description);
+            this.add(data.type[i].description);
         }
     }
 }
 
-class Type {
+export class Type {
     static _currentId = 1;
     #id;
     #description;

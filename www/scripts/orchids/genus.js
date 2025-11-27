@@ -1,14 +1,16 @@
 "use strict"
 
+import { data } from './data.js';
+
 export class GenusList {
     #list;
     constructor() {
         this.#list = [];
-        GenusList.#populate();
+        this.#populate();
     }
 
-    add(newGenus) {
-        this.#list.push(new Genus(newGenus));
+    add(newGenus, src = "") {
+        this.#list.push(new Genus(newGenus, src));
     }
 
     remove(genus) {
@@ -24,38 +26,52 @@ export class GenusList {
     }
 
     getGenus(id) {
-        for (let i = 0; i < this.#list; i++) {
+        for (let i = 0; i < this.#list.length; i++) {
             if (this.#list[i].id === id) {
-                return this.#list.id;
+                return this.#list[i];
             }
         }
+        return void 0;
     }
 
-    static #populate() {
+    #populate() {
         for (let i = 0; i < 5; i++) {
-            add(data.genus[i].description);
+            this.add(data.genus[i].description, `/www/images/genus/${data.genus[i].description}.png`);
         }
     }
 }
 
-class Genus {
+export class Genus {
+
     static _currentId = 1;
+
     #id;
     #description;
-    constructor(description) {
+    #src;
+
+    constructor(description, src = "") {
         this.#id = Genus._currentId++;
         this.#description = description;
+        this.#src = src;
+    }
+
+    get id() {
+        return this.#id;
     }
 
     get genus() {
         return this.#description;
     }
 
-    set genus(newDescription) {
+    get src() {
+        return this.#src;
+    }
+
+    set genus(description) {
         this.#description = newDescription;
     }
 
-    get id() {
-        return this.#id;
+    set src(src) {
+        this.#src = path;
     }
 }

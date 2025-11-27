@@ -1,12 +1,30 @@
 "use strict"
 
-import { GenusList} from './orchids/genus.js';
-import { TypeList, Type} from './orchids/type.js';
-import { LuminosityList, Luminosity} from './orchids/luminosity.js';
-import { TemperatureList, Temperature} from './orchids/temperature.js';
-import { HumidityList, Humidity} from './orchids/humidity.js';
-import { SizeList, Size} from './orchids/size.js';
-import { OrchidList, Orchid} from './orchids/orchid.js';
+import { GenusList } from './orchids/genus.js';
+import { TypeList } from './orchids/type.js';
+import { LuminosityList } from './orchids/luminosity.js';
+import { TemperatureList } from './orchids/temperature.js';
+import { HumidityList } from './orchids/humidity.js';
+import { SizeList } from './orchids/size.js';
+import { OrchidList } from './orchids/orchid.js';
+
+let genusList = new GenusList();
+let typeList = new TypeList();
+let luminosityList = new LuminosityList();
+let temperatureList = new TemperatureList();
+let humidityList = new HumidityList ();
+let sizeList = new SizeList();
+let orchidList = new OrchidList();
+
+orchidList.populate(  
+        genusList,
+        typeList,
+        luminosityList,
+        temperatureList,
+        humidityList,
+        sizeList
+    );
+
 
 /**
  * @author Professor Rui Neves.
@@ -38,3 +56,85 @@ function toDom(tag, attributes = {}, ...children) {
     }
     return result;
 }
+
+/**
+ * Creates the entire <header> element structure.
+ * @returns {HTMLElement} The created <header> element.
+ */
+function createHeader() {
+    return toDom(
+        "header",
+        {},
+        toDom(
+            "ul",
+            {},
+            toDom("li", {}, toDom("a", { href: "index.html" }, "Home")),
+            toDom("li", {}, toDom("a", { href: "#", id: "menu" }, "Menu")), 
+            toDom("li", {}, toDom("a", {}, "Share")),
+            toDom("li"),
+            toDom("li")
+        )
+    );
+}
+
+function createFooter() {
+    return toDom(
+        "footer",
+        {},
+        toDom(
+            "section",
+            {},
+            toDom("h3", {}, "Contactos:"),
+            toDom(
+                "ul",
+                {},
+                toDom("li", {}, "Tel: 111 111 111"),
+                toDom("li", {}, "Email: mail@mail.com"),
+                toDom("li", {}, toDom("address", {}, "Rua de lisboa 201-22")),
+                toDom("li", {}, "Facebook")
+            )
+        ),
+        toDom(
+            "section",
+            {},
+            toDom("h3", {}, "Suporte:"),
+            toDom(
+                "ul",
+                {},
+                toDom("li", {}, "Tel: 999 999 999"),
+                toDom("li", {}, "Email: suport@mail.com"),
+                toDom("li", {}, "Mapa do site"),
+                toDom("li", {}, "Status do servidor")
+            )
+        ),
+        toDom(
+            "section",
+            {},
+            toDom("h3", {}, "Outros:"),
+            toDom(
+                "ul",
+                {},
+                toDom("li", {}, "Bla bla bla"),
+                toDom("li", {}, "Coisas e etc"),
+                toDom("li", {}, "Bla Bla Bla"),
+                toDom("li", {}, "HHkhshsfiehwbvtfewbv")
+            )
+        )
+    );
+}
+
+
+
+
+window.onload = () => {
+    document.body.append(createHeader(), createFooter());
+    
+    const menu = document.getElementById('menu');
+    
+    if (menu) {
+        menu.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            showMenuPage(); 
+        });
+    }
+};
