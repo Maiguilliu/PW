@@ -14,7 +14,8 @@ export class TypeList {
     }
 
     remove(type) {
-        for (let i = 0; i < this.#list.length; i++) {
+        let listLength = this.#list.length;
+        for (let i = 0; i < listLength; i++) {
             if (this.#list[i].type === type) {
                 return this.#list.splice(i, 1);
             }
@@ -26,7 +27,8 @@ export class TypeList {
     }
 
     getType(id) {
-        for (let i = 0; i < this.#list.length; i++) {
+        let listLength = this.#list.length;
+        for (let i = 0; i < listLength; i++) {
             if (this.#list[i].id === id) {
                 return this.#list[i];
             }

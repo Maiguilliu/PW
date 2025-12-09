@@ -37,7 +37,8 @@ export class OrchidList {
     }
 
     remove(orchid) {
-        for (let i = 0; i < this.#list.length; i++) {
+        let listLength = this.#list.length;
+        for (let i = 0; i < listLength; i++) {
             if (this.#list[i].orchid === orchid) {
                 return this.#list.splice(i, 1);
             }
@@ -46,6 +47,15 @@ export class OrchidList {
 
     get getList() {
         return this.#list.slice();
+    }
+
+    getLuminosity(id) {
+        let listLength = this.#list.length;
+        for (let i = 0; i < listLength; i++) {
+            if (this.#list[i].id === id) {
+                return this.#list.id;
+            }
+        }
     }
 
     populate(

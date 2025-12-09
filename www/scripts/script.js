@@ -129,12 +129,5 @@ function createFooter() {
 window.onload = () => {
     document.body.append(createHeader(), createFooter());
     
-    const menu = document.getElementById('menu');
-    
-    if (menu) {
-        menu.addEventListener('click', (event) => {
-            event.preventDefault(); 
-            showMenuPage(); 
-        });
-    }
+ 
 };

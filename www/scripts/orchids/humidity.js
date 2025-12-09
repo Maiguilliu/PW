@@ -14,7 +14,8 @@ export class HumidityList {
     }
 
     remove(humidity) {
-        for (let i = 0; i < this.#list.length; i++) {
+        let listLength = this.#list.length;
+        for (let i = 0; i < listLength; i++) {
             if (this.#list[i].humidity === humidity) {
                 return this.#list.splice(i, 1);
             }
@@ -26,7 +27,8 @@ export class HumidityList {
     }
 
     getHumidity(id) {
-        for (let i = 0; i < this.#list; i++) {
+        let listLength = this.#list.length;
+        for (let i = 0; i < listLength; i++) {
             if (this.#list[i].id === id) {
                 return this.#list.id;
             }
