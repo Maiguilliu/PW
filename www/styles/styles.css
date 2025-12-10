@@ -1,16 +1,33 @@
 :root {
   /* === Main Colors === */
-  --primary-color: rgb(139, 92, 246);     /* Orchid purple — main accent */
-  --secondary-color: rgb(16, 185, 129);   /* Leaf green — secondary highlight */
-  --background-color: rgb(255, 255, 255); /* White background */
+
+  /* Orchid purple — main accent */
+  --primary-color: rgb(139, 92, 246);
+
+  /* Leaf green — secondary highlight */
+  --secondary-color: rgb(16, 185, 129);
+
+  /* White background */
+  --background-color: rgb(255, 255, 255);
+
 
   /* === Support Colors === */
-  --accent-color: rgb(236, 72, 153);      /* Pink accent for highlights/buttons */
-  --text-color: rgb(34, 34, 34);          /* Main text color */
-  --muted-color: rgb(120, 113, 108);      /* Secondary/subtle text */
+
+  /* Pink accent for highlights/buttons */
+  --accent-color: rgb(236, 72, 153);
+
+  /* Main text color */
+  --text-color: rgb(34, 34, 34);
+
+  /* Secondary/subtle text */
+  --muted-color: rgb(120, 113, 108);
+
 
   /* === Optional Neutral (for readability on color backgrounds) === */
-  --light-color: rgb(245, 245, 245);      /* Light neutral (optional) */
+
+  /* Light neutral (optional) */
+  --light-color: rgb(245, 245, 245);
+
 
   /* === Spacing & Style === */
   --space: 0.5rem;
@@ -24,7 +41,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;    
+  padding: 0;
 }
 
 /* === Body === */
@@ -39,82 +56,82 @@ body {
 
 
 /* === Header === */
-header{
-  flex-wrap: wrap; 
+header {
+  flex-wrap: wrap;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   height: 10%;
-  background-color: var(--primary-color);   
-  color: var(--light-color);           
+  background-color: var(--primary-color);
+  color: var(--light-color);
 }
 
-header > ul{
+header>ul {
   list-style-type: none;
   display: flex;
 }
 
-header > ul > li{
+header>ul>li {
   margin: 1rem;
   color: var(--light-color);
 }
 
-header > ul > li a {
+header>ul>li a {
   text-decoration: none;
   color: var(--light-color);
 }
 
 /* === Main === */
-main{
+main {
   flex: 1;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   background-color: var(--background-color);
-  color: var(--text-color); 
+  color: var(--text-color);
   height: 60%;
 }
 
-main > ul{
+main>ul {
   list-style-type: none;
 }
 
-main > section{
+main>section {
   display: flex;
   background-color: var(--background-color);
 }
 
-main > section li{
+main>section li {
   margin-left: 0.1rem;
   margin-right: 0.1rem;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
 }
 
-.flowers{
-  flex-wrap: wrap; 
+.flowers {
+  flex-wrap: wrap;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 
-.flowers > ul{
-  flex-wrap: wrap; 
+.flowers>ul {
+  flex-wrap: wrap;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   list-style-type: none;
 }
 
-.flowers img{
+.flowers img {
   width: 250px;
   height: 250px;
 }
 
-.flower-info{
+.flower-info {
   background-color: var(--light-color);
 }
 
@@ -123,9 +140,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start; 
+  align-items: flex-start;
   background-color: var(--secondary-color);
-  color: var(--light-color); 
+  color: var(--light-color);
 }
 
 /* remove list default padding */
@@ -135,7 +152,7 @@ footer ul {
   margin: 0;
 }
 
-footer > section {
+footer>section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

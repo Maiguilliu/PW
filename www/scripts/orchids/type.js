@@ -35,8 +35,8 @@ export class TypeList {
         }
     }
 
-    #populate(){
-        for(let i = 0; i<2; i++){
+    #populate() {
+        for (let i = 0; i < 2; i++) {
             this.add(data.type[i].description);
         }
     }

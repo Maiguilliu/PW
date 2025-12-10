@@ -35,8 +35,8 @@ export class LuminosityList {
         }
     }
 
-    #populate(){
-        for(let i = 0; i<4; i++){
+    #populate() {
+        for (let i = 0; i < 4; i++) {
             this.add(data.luminosity[i].description);
         }
     }

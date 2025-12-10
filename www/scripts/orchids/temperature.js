@@ -35,8 +35,8 @@ export class TemperatureList {
         }
     }
 
-    #populate(){
-        for(let i = 0; i<4; i++){
+    #populate() {
+        for (let i = 0; i < 4; i++) {
             this.add(data.temperature[i].description);
         }
     }

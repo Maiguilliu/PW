@@ -9,34 +9,34 @@ export class SizeList {
         this.#populate();
     }
 
-    add(newSize){
+    add(newSize) {
         this.#list.push(new Size(newSize));
     }
 
-    remove(size){
+    remove(size) {
         let listLength = this.#list.length;
-        for(let i = 0; i < listLength; i++){
-            if(this.#list[i].size === size){
+        for (let i = 0; i < listLength; i++) {
+            if (this.#list[i].size === size) {
                 return this.#list.splice(i, 1);
             }
         }
     }
 
-    get getList(){
+    get getList() {
         return this.#list.slice();
     }
 
-    getSize(id){
+    getSize(id) {
         let listLength = this.#list.length;
-        for(let i = 0; i < listLength; i++){
-            if(this.#list[i].id === id){
+        for (let i = 0; i < listLength; i++) {
+            if (this.#list[i].id === id) {
                 return this.#list[i].id;
             }
         }
     }
 
-    #populate(){
-        for(let i = 0; i<4; i++){
+    #populate() {
+        for (let i = 0; i < 4; i++) {
             this.add(data.size[i].description);
         }
     }
@@ -60,7 +60,7 @@ class Size {
         this.#description = newDescription;
     }
 
-    get id(){
+    get id() {
         return this.#id;
     }
 }

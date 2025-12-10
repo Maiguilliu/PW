@@ -12,18 +12,18 @@ let genusList = new GenusList();
 let typeList = new TypeList();
 let luminosityList = new LuminosityList();
 let temperatureList = new TemperatureList();
-let humidityList = new HumidityList ();
+let humidityList = new HumidityList();
 let sizeList = new SizeList();
 let orchidList = new OrchidList();
 
-orchidList.populate(  
-        genusList,
-        typeList,
-        luminosityList,
-        temperatureList,
-        humidityList,
-        sizeList
-    );
+orchidList.populate(
+    genusList,
+    typeList,
+    luminosityList,
+    temperatureList,
+    humidityList,
+    sizeList
+);
 
 
 /**
@@ -69,7 +69,7 @@ function createHeader() {
             "ul",
             {},
             toDom("li", {}, toDom("a", { href: "index.html" }, "Home")),
-            toDom("li", {}, toDom("a", { href: "#", id: "menu" }, "Menu")), 
+            toDom("li", {}, toDom("a", { href: "#", id: "menu" }, "Menu")),
             toDom("li", {}, toDom("a", {}, "Share")),
             toDom("li"),
             toDom("li")
@@ -128,6 +128,6 @@ function createFooter() {
 
 window.onload = () => {
     document.body.append(createHeader(), createFooter());
-    
- 
+
+
 };
